@@ -11,9 +11,10 @@ import {
   waitForLCP,
   loadBlocks,
   loadCSS,
+  createOptimizedPicture,
 } from './lib-franklin.js';
 
-const LCP_BLOCKS = ['header', 'hero']; // add your LCP blocks to the list
+const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
 window.hlx.RUM_GENERATION = 'project-1'; // add your RUM generation information here
 
 function buildHeroBlock(main) {
@@ -69,6 +70,19 @@ function buildBackToTopBlock(main) {
   });
 }
 
+// auto build for social media share as left nav
+
+function buildSocialIconBlock(main) {
+
+    const leftNav = document.createElement('div');
+    leftNav.classList.add('socialshareicon');
+    leftNav.setAttribute('name', 'leftNav');
+    leftNav.append(buildBlock('socialshareicon', { elems: [] }));
+    const rightNav = main.children[0];
+    console.log(main.children[0].classList);
+    rightNav.prepend(leftNav);
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -78,6 +92,7 @@ function buildAutoBlocks(main) {
     buildHeroBlock(main);
     buildCtaBlock(main);
     buildBackToTopBlock(main);
+    buildSocialIconBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
@@ -102,6 +117,70 @@ export async function lookupPages(pathnames) {
   }
   const result = pathnames.map((path) => window.pageIndex.lookup[path]).filter((e) => e);
   return (result);
+}
+
+/**
+ * Gets details about blogs that are indexed
+ * @param {Array} pathnames list of pathnames
+ */
+
+export async function lookupBlogs(pathnames) {
+  if (!window.blogIndex) {
+    const resp = await fetch(`${window.hlx.codeBasePath}/blog-index.json`);
+    const json = await resp.json();
+    const lookup = {};
+    json.data.forEach((row) => {
+      lookup[row.path] = row;
+      if (row.image || row.image.startsWith('/default-meta-image.png')) row.image = `/${window.hlx.codeBasePath}${row.image}`;
+    });
+    window.blogIndex = { data: json.data, lookup };
+  }
+  const result = pathnames.map((path) => window.blogIndex.lookup[path]).filter((e) => e);
+  return (result);
+}
+
+/**
+ * Creates a Card using a JSON object and style associated with the card
+ * @param {Object} row JSON Object typically coming from an index array item
+ * @param {String} style Class name that needs to be added to the card root div
+ */
+
+export async function createCard(row, style) {
+  // Create card div
+  const card = document.createElement('div');
+  if (style) card.classList.add(style);
+
+  // Add the image to the card first
+  if (row.image !== '0' && row.title !== '0') {
+    const cardImage = document.createElement('div');
+    cardImage.classList.add('card-image');
+    cardImage.append(createOptimizedPicture(row.image, row.title));
+    card.prepend(cardImage);
+  }
+
+  // Create a separate child div for the card content
+  const cardContent = document.createElement('div');
+  cardContent.classList.add('card-content');
+
+  // Create and add the link, title, author, readtime and category to card content and card
+  const link = document.createElement('a');
+  link.classList.add('blog-link');
+  link.href = row.path;
+  if (row.title) link.innerHTML += `${row.title}`;
+  cardContent.append(link);
+  if (row.description && row.description !== '0') cardContent.innerHTML += `<p>${row.description}</p>`;
+  const author = document.createElement('div');
+  author.classList.add('blog-author');
+  if (row.author && row.author !== '0') author.innerHTML += `By ${row.author}`;
+  if (row.readtime && row.readtime !== '0') author.innerHTML += ` | ${row.readtime}`;
+  cardContent.append(author);
+  const category = document.createElement('div');
+  category.classList.add('blog-category');
+  if (row.category && row.category !== '0') category.innerHTML += row.category;
+  cardContent.append(category);
+
+  card.append(cardContent);
+  return (card);
 }
 
 /**

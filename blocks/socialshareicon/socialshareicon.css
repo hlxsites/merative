@@ -1,57 +1,113 @@
-        .section.socialshareicon-container {
-            display: flex;
-            max-width: 1120px;
-            margin: 0 auto;
-        }
-        
-        div.socialshareicon-wrapper {
-            width: 240px;
-            margin: 0
-        }
-        
-        .socialshareicon.block {
-            position: sticky;
-            top: 300px;
-        }
-        /*div.socialshareicon-wrapper.is-sticky {
-            top: 200px;
-            width: 30em;
-            height: 18em;
-            margin-left: 340px;
-            width: 240px;
-            position: fixed;
-        }
-        */
-        
-        .socialshareicon>ul {
-            list-style: none;
-            display: flex;
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-            flex-direction: row;
-        }
-        
-        .socialshareicon>ul>li {
-            border: none;
-            background-color: var(--background-color);
-            margin-right: 16px;
-        }
-        
-        .socialshareicon .button-container .icon:hover {
-            background: linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
-        }
-        
-        .socialshareicon .button-container .icon svg:hover path {
-            fill: white;
-        }
-        
-        .socialshareicon .button-container .icon {
-            width: 40px;
-            height: 40px;
-            background: transparent;
-            display: inline-flex;
-            border: 1px solid #e7e2da;
-            border-radius: 100%;
-            justify-content: center;
-            align-items: center;
-        }
+/* Start Social Share Icons */
+
+.socialshareicon-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.socialshareicon-wrapper {
+    width: 240px;
+    margin: 0 60px 0 0 !important;
+}
+
+.socialshareicon.block {
+    position: sticky;
+    top: 300px;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    justify-content: end;
+    align-items: baseline;
+    justify-items: center;
+    align-content: space-around;
+}
+
+.socialshareicon-wrapper::after {
+    content: "SHARE VIA";
+    position: sticky;
+    top: 250px;
+    display: flex;
+    font-family: Alliance Medium;
+    font-size: 14px;
+    letter-spacing: 3.2px;
+    margin-bottom: 80px;
+}
+
+.socialshareicon.block .social-share-linkedIn:hover {
+    background: url(../../icons/linkedin-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
+}
+
+.socialshareicon.block .social-share-linkedIn {
+    margin: 5px;
+    background: url(../../icons/linkedin-black.svg) no-repeat center;
+    background-color: #faf8f6;
+    border-radius: 50%;
+    display: inline-flex;
+    height: 50px;
+    justify-content: center;
+    padding: 0;
+    width: 50px;
+    border: 1px solid #e7e2da;
+    background-size: 25px 25px;
+}
+
+.socialshareicon.block .social-share-twitter {
+    margin: 5px;
+    background: url(../../icons/twitter-black.svg) no-repeat center;
+    background-color: #faf8f6;
+    border-radius: 50%;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    height: 50px;
+    justify-content: center;
+    padding: 0;
+    width: 50px;
+    border: 1px solid #e7e2da;
+    background-size: 25px 25px;
+}
+
+.socialshareicon.block .social-share-twitter:hover {
+    background: url(../../icons/twitter-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
+}
+
+.socialshareicon.block .social-share-facebook {
+    margin: 5px;
+    background: url(../../icons/facebook-black.svg) no-repeat center;
+    background-color: #faf8f6;
+    border-radius: 50%;
+    display: inline-flex;
+    height: 50px;
+    justify-content: center;
+    padding: 0;
+    width: 50px;
+    border: 1px solid #e7e2da;
+    background-size: 25px 25px;
+}
+
+.socialshareicon.block .social-share-facebook:hover {
+    background: url(../../icons/facebook-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
+}
+
+.socialshareicon.block .social-share-shareLink {
+    margin: 5px;
+    background: url(../../icons/sharelink-black.svg) no-repeat center;
+    background-color: #faf8f6;
+    border-radius: 50%;
+    display: inline-flex;
+    height: 50px;
+    justify-content: center;
+    padding: 0;
+    width: 50px;
+    border: 1px solid #e7e2da;
+    background-size: 25px 25px;
+}
+
+.socialshareicon.block .social-share-shareLink:hover {
+    background: url(../../icons/sharelink-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
+}
+
+
+/* end Social Share Icons */

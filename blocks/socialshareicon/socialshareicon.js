@@ -1,54 +1,31 @@
-import { createOptimizedPicture } from '../../scripts/lib-franklin.js';
-var socialshareicon = null;
 export default function decorate(block) {
-    /* change to ul, li */
-    const ul = document.createElement('ul');
-    [...block.children].forEach((row) => {
-        const li = document.createElement('li');
-        li.innerHTML = row.innerHTML;
-        ul.append(li);
-    });
-    ul.querySelectorAll('img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
-    block.textContent = '';
-    block.append(ul);
-    for (var j = 0; j < block.children[0].children.length; j++) {
-        var url = block.children[0].children[j].children[0].children[0].getAttribute(("href"));
-        var result = "share_" + url.replace(/(^\w+:|^)\/\//, '');
-        block.children[0].children[j].children[0].children[0].setAttribute('href', 'javascript:void(0)');
-        block.children[0].children[j].children[0].children[0].setAttribute("id", result);
-        document.getElementById(result).addEventListener('click', openLink);
+    var isBlogPage = /(\/blog\/.*)/.test(window.location.pathname);
+    if (isBlogPage) {
+        block.textContent = '';
+        AnchorTagCreation("linkedIn", block);
+        AnchorTagCreation("twitter", block);
+        AnchorTagCreation("facebook", block);
+        AnchorTagCreation("shareLink", block);
     }
-
-    /*socialshareicon = block.parentElement;
-    console.log(block.parentElement.parentElement);
-    window.addEventListener('scroll', () => {
-        const scrollAmount = window.scrollY;
-        const elmnt = document.getElementsByClassName("columns-wrapper");
-
-        console.log("scrollAmount:", scrollAmount);
-        console.log("Offset height : " + elmnt.offsetHeight);
-
-        if (scrollAmount > elmnt.offsetHeight) {
-            socialshareicon.classList.remove('is-sticky');
-        } else {
-
-            socialshareicon.classList.add('is-sticky');
-        }
-
-        /*if (scrollAmount > socialshareicon.offsetHeight) {
-            socialshareicon.classList.add('is-sticky');
-        } else {
-
-            socialshareicon.classList.remove('is-sticky');
-        }
-    });*/
 }
 
+function AnchorTagCreation(scoialMedia, block) {
+    var clsName = "social-share-" + scoialMedia;
+    var txtNode = scoialMedia;
+    var _sid = "social_share_link" + scoialMedia;
+    var _a = document.createElement('a');
+    _a.setAttribute('class', clsName);
+    _a.setAttribute("id", _sid);
+    _a.title = scoialMedia;
+    _a.href = "javascript:void(0)";
+    block.append(_a);
+    document.getElementById(_sid).addEventListener('click', openLink);
+}
 
 function openLink(e) {
-    var idName = e.target.parentElement.parentElement.getAttribute("id");
+    var idName = e.target.getAttribute("id");
     if (idName !== null) {
-        if (idName.includes("linkedin")) {
+        if (idName.includes("linkedIn")) {
             var url = "https://www.linkedin.com/sharing/share-offsite/?url=" + window.location.href;
             window.open(url, '_blank', 'toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=300,width=800,height=500');
         } else if (idName.includes("twitter")) {
@@ -57,6 +34,8 @@ function openLink(e) {
         } else if (idName.includes("facebook")) {
             var url = "https://www.facebook.com/sharer/sharer.php?u=" + window.location.href;
             window.open(url, '_blank', 'toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=300,width=800,height=500');
+        } else if (idName.includes("shareLink")) {
+            navigator.clipboard.writeText(window.location.href);
         }
 
     }
