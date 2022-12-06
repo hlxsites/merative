@@ -14,7 +14,7 @@ function openLink(e) {
       navigator.clipboard.writeText(window.location.href);
   }
 
-  } ̰
+  }
   }
 
   function AnchorTagCreation(scoialMedia, block) {
