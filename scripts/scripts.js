@@ -70,17 +70,18 @@ function buildBackToTopBlock(main) {
   });
 }
 
-// auto build for social media share as left nav
+// auto block build for social media share as left nav
 
 function buildSocialIconBlock(main) {
+    var isBlogPage = /(\/blog\/.*)/.test(window.location.pathname);
+    if (isBlogPage) {
+        const leftNav = document.createElement('div');
+        leftNav.classList.add('socialshareicon');
+        leftNav.append(buildBlock('socialshareicon', { elems: [] }));
+        main.children[0].setAttribute("id", "blog-right-nav");
+        main.prepend(leftNav);
 
-    const leftNav = document.createElement('div');
-    leftNav.classList.add('socialshareicon');
-    leftNav.setAttribute('name', 'leftNav');
-    leftNav.append(buildBlock('socialshareicon', { elems: [] }));
-    const rightNav = main.children[0];
-    console.log(main.children[0].classList);
-    rightNav.prepend(leftNav);
+    }
 }
 
 /**
