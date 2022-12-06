@@ -7,7 +7,7 @@ max-width: 1200px;
 margin: 0 auto;
 }
 .socialshareicon-wrapper {
-width: 240px;
+width: 240px !important;
 margin: 0 60px 0 0 !important;
 }
 .socialshareicon.block {
