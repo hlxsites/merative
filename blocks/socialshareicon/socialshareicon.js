@@ -1,12 +1,19 @@
 export default function decorate(block) {
-    var isBlogPage = /(\/blog\/.*)/.test(window.location.pathname);
-    if (isBlogPage) {
-        block.textContent = '';
-        AnchorTagCreation("linkedIn", block);
-        AnchorTagCreation("twitter", block);
-        AnchorTagCreation("facebook", block);
-        AnchorTagCreation("shareLink", block);
-    }
+
+    const socialshareicon = block.parentNode.parentNode;
+    block.textContent = '';
+    const blogContent = document.createElement('div');
+    blogContent.classList.add('blog-content');
+    socialshareicon.append(blogContent);
+    const childrenDiv = document.getElementById('blog-right-nav').querySelectorAll("div");
+    childrenDiv.forEach(div => {
+        blogContent.append(div);
+    });
+    document.getElementById('blog-right-nav').remove();
+    AnchorTagCreation("linkedIn", block);
+    AnchorTagCreation("twitter", block);
+    AnchorTagCreation("facebook", block);
+    AnchorTagCreation("shareLink", block);
 }
 
 function AnchorTagCreation(scoialMedia, block) {
