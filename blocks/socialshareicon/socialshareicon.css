@@ -1,112 +1,272 @@
 /* Start Social Share Icons */
 
+@media (min-width: 1120px) {
 .socialshareicon-container {
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
+display: flex;
+max-width: 1200px;
+margin: 0 auto;
 }
-
 .socialshareicon-wrapper {
-    width: 240px;
-    margin: 0 60px 0 0 !important;
+width: 240px;
+margin: 0 60px 0 0 !important;
 }
-
 .socialshareicon.block {
-    position: sticky;
-    top: 300px;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    justify-content: end;
-    align-items: baseline;
-    justify-items: center;
-    align-content: space-around;
+position: sticky;
+top: 300px;
+display: flex;
+-webkit-box-orient: horizontal;
+-webkit-box-direction: normal;
+-ms-flex-direction: row;
+flex-direction: row;
+justify-content: end;
+align-items: baseline;
+justify-items: center;
+align-content: space-around;
 }
-
 .socialshareicon-wrapper::after {
-    content: "SHARE VIA";
-    position: sticky;
-    top: 250px;
-    display: flex;
-    font-family: Alliance Medium;
-    font-size: 14px;
-    letter-spacing: 3.2px;
-    margin-bottom: 80px;
+content: "SHARE VIA";
+position: sticky;
+top: 250px;
+display: flex;
+font-family: Alliance Medium;
+font-size: 14px;
+letter-spacing: 3.2px;
+margin-bottom: 80px;
 }
-
 .socialshareicon.block .social-share-linkedIn:hover {
-    background: url(../../icons/linkedin-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
+background: url(../../icons/linkedin-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
 }
-
 .socialshareicon.block .social-share-linkedIn {
-    margin: 5px;
-    background: url(../../icons/linkedin-black.svg) no-repeat center;
-    background-color: #faf8f6;
-    border-radius: 50%;
-    display: inline-flex;
-    height: 50px;
-    justify-content: center;
-    padding: 0;
-    width: 50px;
-    border: 1px solid #e7e2da;
-    background-size: 25px 25px;
+margin: 5px;
+background: url(../../icons/linkedin-black.svg) no-repeat center;
+background-color: #faf8f6;
+border-radius: 50%;
+display: inline-flex;
+height: 50px;
+justify-content: center;
+padding: 0;
+width: 50px;
+border: 1px solid #e7e2da;
+background-size: 25px 25px;
 }
-
 .socialshareicon.block .social-share-twitter {
-    margin: 5px;
-    background: url(../../icons/twitter-black.svg) no-repeat center;
-    background-color: #faf8f6;
-    border-radius: 50%;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    height: 50px;
-    justify-content: center;
-    padding: 0;
-    width: 50px;
-    border: 1px solid #e7e2da;
-    background-size: 25px 25px;
+margin: 5px;
+background: url(../../icons/twitter-black.svg) no-repeat center;
+background-color: #faf8f6;
+border-radius: 50%;
+display: -ms-inline-flexbox;
+display: inline-flex;
+height: 50px;
+justify-content: center;
+padding: 0;
+width: 50px;
+border: 1px solid #e7e2da;
+background-size: 25px 25px;
 }
-
 .socialshareicon.block .social-share-twitter:hover {
-    background: url(../../icons/twitter-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
+background: url(../../icons/twitter-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
 }
-
 .socialshareicon.block .social-share-facebook {
-    margin: 5px;
-    background: url(../../icons/facebook-black.svg) no-repeat center;
-    background-color: #faf8f6;
-    border-radius: 50%;
-    display: inline-flex;
-    height: 50px;
-    justify-content: center;
-    padding: 0;
-    width: 50px;
-    border: 1px solid #e7e2da;
-    background-size: 25px 25px;
+margin: 5px;
+background: url(../../icons/facebook-black.svg) no-repeat center;
+background-color: #faf8f6;
+border-radius: 50%;
+display: inline-flex;
+height: 50px;
+justify-content: center;
+padding: 0;
+width: 50px;
+border: 1px solid #e7e2da;
+background-size: 25px 25px;
 }
-
 .socialshareicon.block .social-share-facebook:hover {
-    background: url(../../icons/facebook-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
+background: url(../../icons/facebook-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
 }
-
 .socialshareicon.block .social-share-shareLink {
-    margin: 5px;
-    background: url(../../icons/sharelink-black.svg) no-repeat center;
-    background-color: #faf8f6;
-    border-radius: 50%;
-    display: inline-flex;
-    height: 50px;
-    justify-content: center;
-    padding: 0;
-    width: 50px;
-    border: 1px solid #e7e2da;
-    background-size: 25px 25px;
+margin: 5px;
+background: url(../../icons/sharelink-black.svg) no-repeat center;
+background-color: #faf8f6;
+border-radius: 50%;
+display: inline-flex;
+height: 50px;
+justify-content: center;
+padding: 0;
+width: 50px;
+border: 1px solid #e7e2da;
+background-size: 25px 25px;
+}
+.socialshareicon.block .social-share-shareLink:hover {
+background: url(../../icons/sharelink-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
+}
 }
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+.socialshareicon-container {
+max-width: 1024px;
+margin: 0 auto;
+}
+.socialshareicon.block {
+left: 150px;
+position: relative;
+}
+.socialshareicon-wrapper::before {
+content: "SHARE VIA";
+position: relative;
+font-family: Alliance Medium;
+font-size: 11px;
+letter-spacing: 3.2px;
+top: 40px;
+left: 20px;
+}
+.socialshareicon.block .social-share-linkedIn:hover {
+background: url(../../icons/linkedin-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
+}
+.socialshareicon.block .social-share-linkedIn {
+margin: 5px;
+background: url(../../icons/linkedin-black.svg) no-repeat center;
+background-color: #faf8f6;
+border-radius: 50%;
+display: inline-flex;
+height: 40px;
+justify-content: center;
+padding: 0;
+width: 40px;
+border: 1px solid #e7e2da;
+background-size: 20px 20px;
+}
+.socialshareicon.block .social-share-twitter {
+margin: 5px;
+background: url(../../icons/twitter-black.svg) no-repeat center;
+background-color: #faf8f6;
+border-radius: 50%;
+display: -ms-inline-flexbox;
+display: inline-flex;
+height: 40px;
+justify-content: center;
+padding: 0;
+width: 40px;
+border: 1px solid #e7e2da;
+background-size: 20px 20px;
+}
+.socialshareicon.block .social-share-twitter:hover {
+background: url(../../icons/twitter-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
+}
+.socialshareicon.block .social-share-facebook {
+margin: 5px;
+background: url(../../icons/facebook-black.svg) no-repeat center;
+background-color: #faf8f6;
+border-radius: 50%;
+display: inline-flex;
+height: 40px;
+justify-content: center;
+padding: 0;
+width: 40px;
+border: 1px solid #e7e2da;
+background-size: 20px 20px;
+}
+.socialshareicon.block .social-share-facebook:hover {
+background: url(../../icons/facebook-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
+}
+.socialshareicon.block .social-share-shareLink {
+margin: 5px;
+background: url(../../icons/sharelink-black.svg) no-repeat center;
+background-color: #faf8f6;
+border-radius: 50%;
+display: inline-flex;
+height: 40px;
+justify-content: center;
+padding: 0;
+width: 40px;
+border: 1px solid #e7e2da;
+background-size: 20px 20px;
+}
 .socialshareicon.block .social-share-shareLink:hover {
-    background: url(../../icons/sharelink-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
+background: url(../../icons/sharelink-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
+}
+}
+
+@media only screen and (max-device-width: 768px) {
+.socialshareicon-container {
+max-width: 768px;
+margin: 0 auto;
+}
+.socialshareicon.block {
+left: 108px;
+position: relative;
+}
+.socialshareicon-wrapper::before {
+content: "SHARE VIA";
+position: relative;
+font-family: Alliance Medium;
+font-size: 11px;
+letter-spacing: 3.2px;
+top: 40px;
+}
+.socialshareicon.block .social-share-linkedIn:hover {
+background: url(../../icons/linkedin-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
+}
+.socialshareicon.block .social-share-linkedIn {
+margin: 5px;
+background: url(../../icons/linkedin-black.svg) no-repeat center;
+background-color: #faf8f6;
+border-radius: 50%;
+display: inline-flex;
+height: 40px;
+justify-content: center;
+padding: 0;
+width: 40px;
+border: 1px solid #e7e2da;
+background-size: 20px 20px;
+}
+.socialshareicon.block .social-share-twitter {
+margin: 5px;
+background: url(../../icons/twitter-black.svg) no-repeat center;
+background-color: #faf8f6;
+border-radius: 50%;
+display: -ms-inline-flexbox;
+display: inline-flex;
+height: 40px;
+justify-content: center;
+padding: 0;
+width: 40px;
+border: 1px solid #e7e2da;
+background-size: 20px 20px;
+}
+.socialshareicon.block .social-share-twitter:hover {
+background: url(../../icons/twitter-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
+}
+.socialshareicon.block .social-share-facebook {
+margin: 5px;
+background: url(../../icons/facebook-black.svg) no-repeat center;
+background-color: #faf8f6;
+border-radius: 50%;
+display: inline-flex;
+height: 40px;
+justify-content: center;
+padding: 0;
+width: 40px;
+border: 1px solid #e7e2da;
+background-size: 20px 20px;
+}
+.socialshareicon.block .social-share-facebook:hover {
+background: url(../../icons/facebook-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
+}
+.socialshareicon.block .social-share-shareLink {
+margin: 5px;
+background: url(../../icons/sharelink-black.svg) no-repeat center;
+background-color: #faf8f6;
+border-radius: 50%;
+display: inline-flex;
+height: 40px;
+justify-content: center;
+padding: 0;
+width: 40px;
+border: 1px solid #e7e2da;
+background-size: 20px 20px;
+}
+.socialshareicon.block .social-share-shareLink:hover {
+background: url(../../icons/sharelink-white.svg) no-repeat center, linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
+}
 }
 
 
