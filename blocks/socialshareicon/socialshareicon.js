@@ -44,8 +44,3 @@ function openLink(e) {
   AnchorTagCreation("facebook", block);
   AnchorTagCreation("shareLink", block);
   }
-
-  
-
-  
- ̰
