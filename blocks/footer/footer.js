@@ -1,4 +1,5 @@
 import { readBlockConfig, decorateIcons } from '../../scripts/lib-franklin.js';
+import { createTag } from '../../scripts/scripts.js';
 
 /**
  * loads and decorates the footer
@@ -62,6 +63,16 @@ export default async function decorate(block) {
   await decorateIcons(footer);
   block.append(footer);
   addCSSToLinkHeadings(block);
+
+  const footerBaseLinks = document.querySelector('footer div:last-of-type > ul:last-of-type');
+  const cookieConsentLi = createTag('li');
+  footerBaseLinks.append(cookieConsentLi);
+  const cookieConsent = createTag('a', { class: 'cookie-consent' });
+  cookieConsent.innerText = 'Cookie preferences';
+
+  cookieConsentLi.append(cookieConsent);
+  // eslint-disable-next-line no-undef
+  cookieConsent.addEventListener('click', () => { OneTrust.ToggleInfoDisplay(); });
 
   // code for building mobile footer
   const mobileMedia = window.matchMedia('(max-width: 667px)');
