@@ -6,7 +6,7 @@ Fix #<gh-issue-id>
 
 ## Test URLs
   
-- Before: https://main--merative2--hlxsites.hlx.page/
-- After: https://<branch>--merative2--hlxsites.hlx.page/
+- Before: https://main--merative--hlxsites.hlx.page/
+- After: https://<branch>--merative--hlxsites.hlx.page/
   
 ## Description
